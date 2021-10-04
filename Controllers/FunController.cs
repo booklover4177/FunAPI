@@ -50,5 +50,25 @@ namespace FunAPI.Controllers{
 
             return reversedWord;
         }
+
+        [HttpGet("dog/{name}/{age}/{breed}")]
+
+        public Dog NewDog(string name, int age, string breed){
+
+            return new Dog(){Name=name, Age=age, Breed=breed};
+        }
+
+        [HttpGet("dogs/{name}/{age}/{breed}/{num}")]
+
+        public Dog[] Dogs(string name, int age, string breed, int num){
+
+            var dogs=new Dog[num];
+
+            for(var dognum=0; dognum<num; dognum++){
+                dogs[dognum]=new Dog(){Name=name, Age=age, Breed=breed};
+            }
+
+            return dogs;
+        }
     }
 }
