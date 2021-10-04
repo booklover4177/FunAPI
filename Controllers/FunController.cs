@@ -14,6 +14,13 @@ namespace FunAPI.Controllers{
 
             return (double)cm/2.54;
         }
+
+        [HttpGet("FtoC/{F}")]
+
+        public double convertFToC(double F){
+
+            return (F-32)*1.8;
+        }
         
     }
 }
