@@ -21,6 +21,18 @@ namespace FunAPI.Controllers{
 
             return (F-32)*1.8;
         }
+
+        [HttpGet("modifyNames/{name}/{num}")]
+
+        public string[] modifyName(string name, int num){
+            var names=new string[num];
+
+            for(var modnum=0; modnum<num; modnum++){
+                names[modnum]=name+(modnum+1);
+            }
+
+            return names;
+        }
         
     }
 }
