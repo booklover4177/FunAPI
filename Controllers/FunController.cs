@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -34,5 +35,20 @@ namespace FunAPI.Controllers{
             return names;
         }
         
+        [HttpGet("reverse/{word}")]
+
+        public string reverseWord(string word){
+
+           string reversedWord="";
+            var reverseIndex=0;
+            
+            for(var index=word.Length-1; index>=0; index--){
+                
+                reversedWord+=word[index];
+                reverseIndex++;
+            }
+
+            return reversedWord;
+        }
     }
 }
